@@ -33,8 +33,8 @@ All data is stored locally in a `data.ts` file — no backend required.
 
 - **React** (Functional Components)
 - **TypeScript**
-- **React Hooks** (`useState`, `useMemo`)
-- **CSS Modules** / Tailwind / SCSS (based on your setup)
+- **React Hooks**
+- **Tailwind CSS**
 - **Local Data Source** (`data.ts` file)
 
 ---
