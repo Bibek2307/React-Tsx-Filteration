@@ -1,69 +1,55 @@
-# React + TypeScript + Vite
+# 📊 React + TypeScript Data Table with Sorting, Filtering, Search & Pagination
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **pure frontend React + TypeScript** project that displays tabular data with sorting, filtering, searching, pagination, and inline status updates.  
+All data is stored locally in a `data.ts` file — no backend required.
 
-Currently, two official plugins are available:
+![Project Preview](./preview1.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔍 **Search**: Instantly search across all columns
+- 📂 **Filtering**:
+  - Filter by **Name**
+  - Filter by **Country**
+  - Filter by **Email**
+  - Filter by **Project Name**
+  - Filter by **Status** (Completed, In Progress)
+- 📑 **Sorting**:
+  - Sort by **Name** (A–Z / Z–A)
+  - Sort by **Country**
+  - Sort by **Date**
+- 📅 **Pagination**:
+  - Basic previous/next navigation
+  - Shows current page indicator
+- ⚡ **Inline Status Update**:
+  - Update the **Task Status** directly from the Actions column
+- 🛡 **TypeScript** for safer, type-checked code
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **React** (Functional Components)
+- **TypeScript**
+- **React Hooks**
+- **Tailwind CSS**
+- **Local Data Source** (`data.ts` file)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧠 How It Works
+- Data Source: All data is stored in src/data.ts as a TypeScript array of objects
+- Sorting: Clicking on column headers toggles ascending/descending sort order
+- Filtering: Dropdown menus let you filter rows by multiple criteria
+- Search: The search bar filters rows in real time
+- Pagination: Displays limited rows per page with navigation buttons
+- Status Update: Clicking the action button allows you to change the status field
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 📌 Notes
+- This is frontend only — no API or database is connected
+- Changes to the table (like status updates) are not persisted after refresh
+- For persistence, you can integrate with localStorage or a backend API
