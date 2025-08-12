@@ -5,6 +5,16 @@ import { MdSort } from "react-icons/md";
 import { AiOutlineDown } from "react-icons/ai";
 import { data } from "../data";
 
+type Project = {
+  client: string;
+  country: string;
+  email: string;
+  project: string;
+  progress: string;
+  status: string;
+  date: string;
+  image: string;
+};
 const ProjectTable = () => {
   const [projects, setProjects] = useState(data);
 
@@ -27,7 +37,7 @@ const ProjectTable = () => {
     number | null
   >(null);
 
-  const sortProjects = (key: string) => {
+  const sortProjects = (key: keyof Project) => {
     let sortedProjects = [...projects];
 
     if (
@@ -44,7 +54,7 @@ const ProjectTable = () => {
     setProjects(sortedProjects);
   };
 
-  const handleSortOptionClick = (key: string) => {
+  const handleSortOptionClick = (key: keyof Project) => {
     sortProjects(key);
     setDropdownVisible(false);
   };
