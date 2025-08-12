@@ -7,6 +7,7 @@ All data is stored locally in a `data.ts` file — no backend required.
 
 ---
 
+
 ## ✨ Features
 
 - 🔍 **Search**: Instantly search across all columns
